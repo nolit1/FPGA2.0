@@ -12,7 +12,7 @@ int regMemory[REG];
 //Перевод из двоичной в десятичную
 int toDecimal(const char *inputNum) {
     int resultNum = 0;
-    for (int i = 1; i < strlen(inputNum); i++) {
+    for (int i = 1; i < (int) strlen(inputNum); i++) {
         if (inputNum[i] == '1') {
             resultNum = (int) (resultNum + pow(2, strlen(inputNum) - 1 - i));
         }
@@ -218,7 +218,7 @@ int risk(int counter, int currentCommand, int registerA, int registerB, int regi
             counter++;
             break;
         }
-            /**SW, в ячейку фикс памяти с индексом "значение регистра с индексом С" загружаем данные из ячейки А регистра*/
+            /**SW, в ячейку фикс памяти с индексом "значение регистра с индексом С" загружаем данные из ячейки регистра A*/
         case SW : {
             fixMemory[regMemory[registerC]] = regMemory[registerA];
             counter++;
